@@ -142,17 +142,15 @@ public class MyLinkedList {
 	
 	public void reverse(){
 	
-		Node temp = null ;
-		Node next = null;
+		Node temp = null ;		
 		Node current = head;
 		
 		while(current.getNext()!=null){
 			temp = current;
-			next = current.getNext();
-
-			next.setNext(temp);
-			temp.setNext(next);
-						
+			current = temp.getNext();
+			
+			
+			temp.setNext(current);					
 		}
 		
 		head = current;
