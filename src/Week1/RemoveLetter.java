@@ -1,6 +1,5 @@
 package Week1;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.ListIterator;
@@ -32,30 +31,24 @@ public class RemoveLetter {
 		 */
 		LinkedList<String> l = new LinkedList<>();
 
-		
 		l.add("two");
 		l.add("six");
 		l.addLast("one");
 		l.add("Three");
 		l.add("four");
-		l.add(1,"ten");
-		l.add(3,"five");
-		
+		l.add(1, "ten");
+		l.add(3, "five");
 
 		ListIterator<String> li = l.listIterator();
 
 		System.out.println("before " + l.size());
-		
 
-		
 		while (li.hasNext()) {
 
 			if (li.next().equals("one"))
-				li.remove();									
-			
-		}
+				li.remove();
 
-		
+		}
 
 		System.out.println("after " + l.size());
 		System.out.println(l.getLast());
@@ -66,7 +59,6 @@ public class RemoveLetter {
 		System.out.println(l);
 		Collections.shuffle(l);
 		System.out.println(l);
-		
 
 	}
 }

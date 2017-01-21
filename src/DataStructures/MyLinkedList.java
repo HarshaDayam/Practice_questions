@@ -1,4 +1,5 @@
-package Week1;
+
+package DataStructures;
 
 public class MyLinkedList {
 
@@ -142,20 +143,21 @@ public class MyLinkedList {
 	
 	public void reverse(){
 	
-		Node temp = null ;		
+				
 		Node current = head;
-		
-		while(current.getNext()!=null){
-			temp = current;
-			current = temp.getNext();
+		Node prev = null ;
+		Node next = null;
+								
+		while(current != null){			
 			
-			
-			temp.setNext(current);					
+			next = current.getNext();
+	        current.setNext(prev);
+	        prev = current;
+	        current = next;
 		}
-		
-		head = current;
-		 
-					
+				
+		head = prev;
+		 					
 	}
 
 	private class Node {
@@ -204,6 +206,9 @@ public class MyLinkedList {
 		list.add(1);
 		list.add(2);
 		list.add(3);
+		list.add(4);
+		
+		System.out.println(list);
 		
 		list.reverse();
 		
