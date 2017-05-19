@@ -141,24 +141,22 @@ public class MyLinkedList {
 		return output;
 	}
 	
-	public void reverse(){
 	
-				
-		Node current = head;
-		Node prev = null ;
-		Node next = null;
-								
-		while(current != null){			
-			
-			next = current.getNext();
-	        current.setNext(prev);
-	        prev = current;
-	        current = next;
-		}
-				
-		head = prev;
-		 					
-	}
+	
+	 Node reverse(Node node) {
+	        Node prev = null;
+	        Node current = head;
+	        Node next = null;
+	        while (current != null) {
+	            next = current.next;
+	            current.next = prev;
+	            prev = current;
+	            current = next;
+	        }
+	        node = prev;
+	        return node;
+	    }
+	
 
 	private class Node {
 		// reference to the next node in the chain, or null if there isn't one.
@@ -210,7 +208,7 @@ public class MyLinkedList {
 		
 		System.out.println(list);
 		
-		list.reverse();
+		list.head = list.reverse(list.head);
 		
 		System.out.println(list);
 	}
